@@ -4,7 +4,12 @@
 		<title>538 data</title>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+		<script type="text/javascript" src="538.js"></script>
 		<script type="text/javascript">
+			fivethirtyeight.load(function (data) {
+				$(initWithData.bind(window, data));
+			});
+
 			function initWithData(data) {
 				var dem = "#4572EE", gop = "#EE4643";
 
@@ -69,18 +74,6 @@
 				// linkify the subtitle
 				$("#container text.highcharts-subtitle").css({cursor:"pointer"}).click(function() { window.location = "http://fivethirtyeight.blogs.nytimes.com"; });
 			}
-
-			// Data is loaded from http://elections.nytimes.com/2012/cards/38-fivethirtyeight-ccol-top.js
-			// using JSONP, with the padding 'eg2012.cards['38-fivethirtyeight-ccol-top'].load'
-			eg2012 = {
-				cards: {
-					"38-fivethirtyeight-ccol-top": {
-						load: function (data) {
-							$(initWithData.bind(window, data));
-						}
-					}
-				}
-			};
 		</script>
 		<script type="text/javascript" src="http://elections.nytimes.com/2012/cards/38-fivethirtyeight-ccol-top.js"></script>
 		<style type="text/css">

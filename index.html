@@ -32,10 +32,18 @@
 					subtitle: {
 						text: 'Source: fivethirtyeight.blogs.nytimes.com (Updated ' + data.times.forecast.updated_date + ' ' + data.times.forecast.updated_time + ')'
 					},
+					xAxis: {
+						title: {
+							text: 'Obama EV'
+						}
+					},
 					yAxis: {
 						min: 0,
 						title: {
-							text: 'Probability (%)'
+							text: 'Probability'
+						},
+						labels: {
+							formatter: function () { return this.value + '%'; }
 						}
 					},
 					tooltip: {
@@ -62,6 +70,8 @@
 				$("#container text.highcharts-subtitle").css({cursor:"pointer"}).click(function() { window.location = "http://fivethirtyeight.blogs.nytimes.com"; });
 			}
 
+			// Data is loaded from http://elections.nytimes.com/2012/cards/38-fivethirtyeight-ccol-top.js
+			// using JSONP, with the padding 'eg2012.cards['38-fivethirtyeight-ccol-top'].load'
 			eg2012 = {
 				cards: {
 					"38-fivethirtyeight-ccol-top": {

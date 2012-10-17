@@ -6,7 +6,12 @@
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
 		<script type="text/javascript" src="538.js"></script>
 		<script type="text/javascript">
+			var first = null;
+
 			fivethirtyeight.load(function (data) {
+				if (first === null) first = JSON.stringify(data);
+				else console.log(first === JSON.stringify(data));
+
 				$(initWithData.bind(window, data));
 			});
 
@@ -75,7 +80,6 @@
 				$("#container text.highcharts-subtitle").css({cursor:"pointer"}).click(function() { window.location = "http://fivethirtyeight.blogs.nytimes.com"; });
 			}
 		</script>
-		<script type="text/javascript" src="http://elections.nytimes.com/2012/cards/38-fivethirtyeight-ccol-top.js"></script>
 		<style type="text/css">
 			html {
 				height: 100%;

@@ -6,12 +6,7 @@
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
 		<script type="text/javascript" src="538.js"></script>
 		<script type="text/javascript">
-			var first = null;
-
 			fivethirtyeight.load(function (data) {
-				if (first === null) first = JSON.stringify(data);
-				else console.log(first === JSON.stringify(data));
-
 				$(initWithData.bind(window, data));
 			});
 

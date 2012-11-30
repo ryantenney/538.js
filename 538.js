@@ -1,7 +1,7 @@
 (function () {
 
 	var callback;
-	var url = "http://elections.nytimes.com/2012/cards/38-fivethirtyeight-ccol-top.js";
+	var url = "http://graphics8.nytimes.com//packages/html/1min/elections/2012/fivethirtyeight/fivethirtyeight-ccol-top.js"
 
 	// Data is loaded from http://elections.nytimes.com/2012/cards/38-fivethirtyeight-ccol-top.js
 	// using JSONP, with the padding 'eg2012.cards['38-fivethirtyeight-ccol-top'].load'
